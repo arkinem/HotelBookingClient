@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="swingx-0.9.4">
+    <archive path="C:/Users/Błażej/Desktop/swingx-0.9.4.jar" />
+  </library>
+  <library name="node-DefinitelyTyped">
+    <archive path="C:/Users/Błażej/.IntelliJIdea2016.3/config/javascript/extLibs/http_github.com_DefinitelyTyped_DefinitelyTyped_raw_master_node_index.d.ts" />
+  </library>
+</eclipse-userlibraries>
+
