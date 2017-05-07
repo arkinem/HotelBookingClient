@@ -1,6 +1,6 @@
 package JGT.GUI.HotelAdministrator;
 
-import JGT.GUI.User.NewReservation;
+import JGT.Client;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -20,6 +20,8 @@ public class MainAdminH extends JFrame implements ActionListener
 
     private JLabel labelGreeting;
     private JLabel labelTable;
+
+    private JButton buttonSignOut;
 
     private static Socket socket;
     private static DataOutputStream outputToServer;
@@ -102,7 +104,22 @@ public class MainAdminH extends JFrame implements ActionListener
         tableReservations.setComponentPopupMenu(popupMenu);
         tableReservations.addMouseListener(new JGT.GUI.TableMouseListener(tableReservations));
 
+        /*
+		 * Buttons
+		 */
+        buttonSignOut = new JButton("Sign out");
+        buttonSignOut.setBounds(325, 315, 150, 30);
+        contentPane.add(buttonSignOut);
 
+        buttonSignOut.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                Client client = new Client();
+                client.showClientLoginWindow(true);
+                setVisible(false);
+            }
+        });
 
         pack();
         setSize(800, 400);

@@ -1,6 +1,9 @@
 package JGT.GUI.User;
 
+import JGT.Client;
+
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,13 +12,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
-import java.util.Date;
-import java.util.Calendar;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 
 
 public class MainUser extends JFrame implements ActionListener
@@ -23,6 +19,8 @@ public class MainUser extends JFrame implements ActionListener
     private Container contentPane;
 
     private JButton buttonNewReservation;
+
+    private JButton buttonSignOut;
 
     private JLabel labelGreeting;
     private JLabel labelTable;
@@ -96,7 +94,7 @@ public class MainUser extends JFrame implements ActionListener
         add(scrollPane);
 
         /*
-		 * Button
+		 * Buttons
 		 */
 
         buttonNewReservation = new JButton("New reservation");
@@ -108,6 +106,19 @@ public class MainUser extends JFrame implements ActionListener
             public void actionPerformed(ActionEvent e)
             {
                 NewReservation newReservation = new NewReservation(socket, username);
+            }
+        });
+        buttonSignOut = new JButton("Sign out");
+        buttonSignOut.setBounds(625, 315, 150, 30);
+        contentPane.add(buttonSignOut);
+
+        buttonSignOut.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                 Client client = new Client();
+                client.showClientLoginWindow(true);
+                setVisible(false);
             }
         });
 

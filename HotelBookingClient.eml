@@ -3,7 +3,4 @@
 	<output-test url="file://$MODULE_DIR$/out/test/HotelBookingClient"/>
 	<exclude-output/>
 	<contentEntry url="file://$MODULE_DIR$"/>
-	<levels>
-		<level name="swingx-0.9.4" value="project"/>
-	</levels>
 </component>
