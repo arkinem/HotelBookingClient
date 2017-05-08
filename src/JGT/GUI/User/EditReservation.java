@@ -11,12 +11,8 @@ import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.text.DateFormat;
-
-import static java.lang.Math.toIntExact;
+import java.text.SimpleDateFormat;
 
 
 public class EditReservation extends JFrame
@@ -161,9 +157,9 @@ public class EditReservation extends JFrame
 
                                 respond = inputFromServer.readLine();
                                 if (respond.equals("DENIED")) {
-                                    JOptionPane.showMessageDialog(null, "Unfortunatly nie mamy pokoju spelniajacego twoje wymagania, poszukaj jeszcze raz.");
+                                    JOptionPane.showMessageDialog(null, "Unfortunately, We do not have a room to meet your requirements, try again.");
                                 } else {
-                                    JOptionPane.showMessageDialog(null, "Sukces");
+                                    JOptionPane.showMessageDialog(null, "We have found free rooms to meet your requirements.");
                                 }
                             }
 
