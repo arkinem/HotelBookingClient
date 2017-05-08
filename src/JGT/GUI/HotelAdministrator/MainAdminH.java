@@ -13,6 +13,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JTable;
+
+
 
 public class MainAdminH extends JFrame implements ActionListener
 {
@@ -103,7 +109,6 @@ public class MainAdminH extends JFrame implements ActionListener
         tableReservations.addMouseListener(new JGT.GUI.TableMouseListener(tableReservations));
 
 
-
         pack();
         setSize(800, 400);
         setResizable(false);
@@ -174,7 +179,7 @@ public class MainAdminH extends JFrame implements ActionListener
     {
         int selectedRow = tableReservations.getSelectedRow();
 
-        //JGT.GUI.HotelAdministrator.RoomAssign roomAssign = new JGT.GUI.HotelAdministrator.RoomAssign(socket, getRowAt(selectedRow));
+        JGT.GUI.HotelAdministrator.RoomAssign roomAssign = new JGT.GUI.HotelAdministrator.RoomAssign(socket, getRowAt(selectedRow));
 
     }
 
@@ -183,8 +188,18 @@ public class MainAdminH extends JFrame implements ActionListener
     {
         String[] result = new String[6];
 
-        for (int i = 0; i < 6; i++) {
-            result[i] = tableReservations.getModel().getValueAt(row, i).toString();
+        try {
+            for (int i = 0; i < 6; i++) {
+                result[i] = tableReservations.getModel().getValueAt(row, i).toString();
+            }
+        }
+        catch(NullPointerException e)
+        {
+
+            for (int i = 0; i < 5; i++) {
+                result[i] = tableReservations.getModel().getValueAt(row, i).toString();
+            }
+            result[5] = "";
         }
 
         return result;

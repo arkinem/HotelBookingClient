@@ -161,9 +161,9 @@ public class EditReservation extends JFrame
 
                                 respond = inputFromServer.readLine();
                                 if (respond.equals("DENIED")) {
-                                    JOptionPane.showMessageDialog(null, "Unfortunatly nie mamy pokoju spelniajacego twoje wymagania, poszukaj jeszcze raz.");
+                                    JOptionPane.showMessageDialog(null, "Unfortunately we don't have a room to meet your requirements, please search again.");
                                 } else {
-                                    JOptionPane.showMessageDialog(null, "Sukces");
+                                    JOptionPane.showMessageDialog(null, "Editing completed successfully.");
                                 }
                             }
 

@@ -125,7 +125,7 @@ public class MainUser extends JFrame implements ActionListener
         popupMenu.add(menuItemEdit);
         popupMenu.add(menuItemRemove);
         tableUserReservations.setComponentPopupMenu(popupMenu);
-        tableUserReservations.addMouseListener(new JGT.GUI.TableMouseListener(tableUserReservations));
+        tableUserReservations.addMouseListener(new JGT.GUI.TableMouseListener1(tableUserReservations));
 
 
 

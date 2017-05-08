@@ -30,24 +30,24 @@ public class RoomAssign extends JFrame
         this.socket = socket;
 
         contentPane = getContentPane();
-        setBounds(0, 0, 300, 200);
+        setBounds(0, 0, 300, 120);
         contentPane.setLayout(null);
 
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
 
         labelRoomNo = new JLabel("Room No. ", SwingConstants.RIGHT);
-        labelRoomNo.setBounds(10, 69, 150, 15);
+        labelRoomNo.setBounds(10, 10, 80, 15);
         labelRoomNo.setForeground(Color.BLACK);
         contentPane.add(labelRoomNo);
 
         textFieldRoomNo = new JTextField();
-        textFieldRoomNo.setBounds(115, 25, 178, 20);
+        textFieldRoomNo.setBounds(100, 8, 178, 20);
         textFieldRoomNo.setColumns(10);
         contentPane.add(textFieldRoomNo);
 
         buttonSubmit = new JButton("Submit");
-        buttonSubmit.setBounds(325, 315, 150, 30);
+        buttonSubmit.setBounds(75, 50, 150, 30);
         contentPane.add(buttonSubmit);
 
         buttonSubmit.addActionListener(new ActionListener()
@@ -73,7 +73,7 @@ public class RoomAssign extends JFrame
         });
 
         pack();
-        setSize(800, 400);
+        setSize(300, 120);
         setResizable(false);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
