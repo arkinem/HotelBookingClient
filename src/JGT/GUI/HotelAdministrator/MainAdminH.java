@@ -115,9 +115,18 @@ public class MainAdminH extends JFrame implements ActionListener
         {
             public void actionPerformed(ActionEvent e)
             {
-                Client client = new Client();
-                client.showClientLoginWindow(true);
-                setVisible(false);
+
+                try {
+                    outputToServer = new DataOutputStream(socket.getOutputStream());
+                    outputToServer.writeBytes("<!ENDSESSION!>");
+                    dispose();
+                    Client client = new Client();
+                    client.showClientLoginWindow(true);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+
+
             }
         });
 
